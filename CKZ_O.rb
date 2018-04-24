@@ -39,11 +39,11 @@ def obpayload(payload)
   
   if (ARGV[0] == nil)
       puts "
-       ____ _  __ _____     ___  
-      / ___| |/ /|__  /    / _ \\ 
+       ____ _  __ _____     ___
+      / ___| |/ /|__  /    / _ \\
      | |   | ' /   / /    | | | |
      | |___| . \\  / /_    | |_| |
-      \\____|_|\\_\\/____|____\\___/   
+      \\____|_|\\_\\/____|____\\___/
       Created by CausticKirbyZ
       
       Documentation:
@@ -52,15 +52,19 @@ def obpayload(payload)
       Syntax:
       ./CKZ_O.rb <Protocol> <ip address[:portnumber]> <file name>
   
+      if no port number if specified it will use the default for the given protocol.
+
       Example:
       ./CKZ_O.rb http 192.168.1.1 myfile.txt
       ./CKZ_O.rb http 192.168.1.1:1234 myfile.txt
       "
       abort
-  elsif (ARGV[1] == nil || ARGV  || ARGV[2] == nil)
+  elsif (ARGV[1] == nil || ARGV !~ /http[s]/  || ARGV[2] == nil || ARGV[2] !~ /http[s]/)
     puts "SYNTAX ERROR
-    please follow syntax as "
-
+    please follow syntax as:
+    CKZ_O.rb <Protocol> <ip address[:portnumber]> <file name>
+    "
+    abort
   end    
   
   
