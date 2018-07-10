@@ -74,7 +74,7 @@ def obpayload(payload)
     abort
   end
 
-  if (ARGV[1] == nil || (IPAddress.valid? ARGV[1]) == false)
+  if (ARGV[1] == nil || (IPAddress.valid? ARGV[1].split(":")[0]) == false)
     puts "SYNTAX ERROR
     Please Enter a valid IP address
     CKZ_O.rb <protocol> <ip address[:portnumber]> <file name>
