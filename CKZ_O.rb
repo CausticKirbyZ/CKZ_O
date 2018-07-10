@@ -1,3 +1,6 @@
+#!/usr/bin/env ruby
+
+require "ipaddress"
 # payload obfuscation
 def obpayload(payload)
     output = "Dim next1 As String\nnext1 = "
@@ -59,10 +62,30 @@ def obpayload(payload)
       ./CKZ_O.rb http 192.168.1.1:1234 myfile.txt
       "
       abort
-  elsif (ARGV[1] == nil || ARGV !~ /http[s]/  || ARGV[2] == nil || ARGV[2] !~ /http[s]/)
+    end
+    
+  if (ARGV[0] !~ /https?/i)
+    puts ARGV[0]
     puts "SYNTAX ERROR
-    please follow syntax as:
+    please Enter Valid Protocol : 
+    http, https, smb, etc...
     CKZ_O.rb <Protocol> <ip address[:portnumber]> <file name>
+    "
+    abort
+  end
+
+  if (ARGV[1] == nil || (IPAddress.valid? ARGV[1]) == false)
+    puts "SYNTAX ERROR
+    Please Enter a valid IP address
+    CKZ_O.rb <protocol> <ip address[:portnumber]> <file name>
+    "
+    abort
+  end
+  
+  if(ARGV[2] == nil  )
+    puts "SYNTAX ERROR
+    Please Enter a file name
+    CKZ_O.rb <protocol> <ip address[:portnumber]> <file name>
     "
     abort
   end    
