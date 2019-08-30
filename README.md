@@ -1,11 +1,11 @@
-NAME
+```NAME
        ____ _  __ _____     ___
       / ___| |/ /|__  /    / _ \
      | |   | ' /   / /    | | | |
      | |___| . \  / /_    | |_| |
       \____|_|\_\/____|____\___/
       Created by CausticKirbyZ
-      
+``` 
 DESCRIPTION
 Obfuscates a vba cmd for office macros by splitting it 
 by chars and then combining it back together and running it in a shell
